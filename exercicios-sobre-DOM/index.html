@@ -16,7 +16,8 @@
                 <p id="pEx1">Texto</p>
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 1
+                const pTexto = document.getElementById("pEx1")
+                pTexto.textContent = "Olá"
                 </script>
 
             <h3>Exercício 2</h3>
@@ -25,7 +26,7 @@
                 <p class="ex3">Texto</p>
                 
                 <script>
-                    document.getElementsByTagName("p")
+                document.getElementsByTagName("p")[3].textContent = "Mundo"
                 //adicione aqui o script para resolução do Exercício 2
                 </script>
             
@@ -35,7 +36,7 @@
                 <p class="ex3">Texto ex3</p>
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 3
+                document.getElementsByClassName("ex3")[2].textContent = "classe ex3"
                 </script>
 
 
@@ -45,7 +46,7 @@
                 <img id="image" src="./imgs/flower.jpg" width="450">
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 4
+                document.getElementById("image").setAttribute("src", "./imgs/flowers_and_sum.jpg");
                 </script>
 
             
@@ -56,7 +57,7 @@
                 <input type="text" id="myText" value="Oi">
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 5
+                document.getElementById("myText").setAttribute("value", "INE5646");
                 </script>
 
 
@@ -68,7 +69,7 @@
                 <p id="demo">Texto que deve ser em vermelho</p>
                 
                 <script>
-                //adicione aqui o script para resolução do Exercício 6
+                document.getElementById("demo").style.color = "red"
                 </script>
 
 
@@ -79,7 +80,7 @@
                 <p id="demo40">Texto em 40px.</p>
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 7
+                document.getElementById("demo40").style.fontSize = "40px"
                 </script>
 
             <h3>Exercício 8</h3>
@@ -89,7 +90,7 @@
                 <p id="demo8">Me esconda!</p>
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 8
+                document.getElementById("demo8").style.display = "none"
                 </script>
 
             <h3>Exercício 9</h3>
@@ -99,7 +100,10 @@
                 <button id="botao1">Clique aqui</button>
 
                 <script>
-                    //adicione aqui o script para resolução do Exercício 9
+                const botao = document.getElementById("botao1")
+                botao.addEventListener("click", (e) => {
+                    console.log("Botao clicado")
+                })
                 </script>
 
 
@@ -116,7 +120,9 @@
                 <p id="saidaMap">Resultado do map aqui!</p>
 
                 <script>
-                    //adicione aqui o script para resolução do Exercício 10
+                const numeros = [1,2,3,4,5,6,7,8,9,10]
+                const quadrado = numeros.map(el => el*el)
+                document.getElementById("saidaMap").textContent = quadrado
                 </script>
 
             <h3>Exercício 11</h3>
@@ -130,7 +136,9 @@
 
                 
                 <script>
-                    //adicione aqui o script para resolução do Exercício 11
+                const n = [1,2,3,4,5,6,7,8,9,10]
+                const nFiltrado = n.filter(el => el % 2 === 0)
+                document.getElementById("saidaFilter").innerHTML = nFiltrado
                 </script>
 
             <h3>Exercício 12</h3>
@@ -144,7 +152,9 @@
                 <p id="saidaReduce">Resultado do reduce aqui!</p>
 
                 <script>
-                    //adicione aqui o script para resolução do Exercício 12 
+                const num = [1,2,3,4,5,6,7,8,9,10]
+                const nReduce = n.reduce((acc, el) => acc + el, 0)
+                document.getElementById("saidaReduce").textContent = nReduce
                 </script>
 
             <h3>Exercício 13</h3>
@@ -157,7 +167,13 @@
                 <p id="saidaParesAoQuadradoMais42">Resultado aqui</p>
 
                 <script>
-                    //adicione aqui o script para resolução do Exercício 13 
+                const nArray = [1,2,3,4,5,6,7,8,9,10]
+                // const paresAoQuadradoMais42 = nArray.filter(el => el % 2 === 0).map(el => el * el).reduce((acc, el) => acc + el, 42)
+                const filtrado = nArray.filter(el => el % 2 === 0)
+                const mapeado = filtrado.map(el => el * el)
+                const paresAoQuadradoMais42 = mapeado.reduce((acc, el) => acc + el, 42)
+                document.getElementById("saidaParesAoQuadradoMais42").textContent = paresAoQuadradoMais42
+
                 </script>
 
 </body>
